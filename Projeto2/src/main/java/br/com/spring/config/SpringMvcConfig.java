@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
  *
  */
 @Configuration
-public class SpringMvcConfig extends WebMvcConfigurerAdapter {
+public class SpringMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -41,6 +41,4 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 		source.setBasename("messages");
 		return source;
 	}
-	
-	
 }
