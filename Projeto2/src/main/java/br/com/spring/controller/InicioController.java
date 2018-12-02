@@ -18,8 +18,12 @@ public class InicioController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView inicio(@ModelAttribute("usuario") Usuario usuario) {
-		ModelAndView model = new ModelAndView("login");
-		return model;
+		return new ModelAndView("login");
+	}
+	
+	@RequestMapping(value="home" , method = RequestMethod.GET)
+	public ModelAndView home() {
+		return new ModelAndView("home");
 	}
 
 }

@@ -13,20 +13,8 @@
     <meta name="author" content="">
     
 	<title>Login</title>
-    <spring:url var="css" value="/static/bootstrap/css/bootstrap.css"/>
-    <link type="text/css" rel="stylesheet" href="${css }"/>
     
-    <spring:url var="fontawesome" value="/static/fontawesome-free/css/all.min.css"/>
-    <link type="text/css" rel="stylesheet" href="${fontawesome }"/>
-
-    <spring:url var="sb-admin" value="/static/sb-admin/css/sb-admin.css"/>
-    <link type="text/css" rel="stylesheet" href="${sb-admin }"/>
-    
-    <spring:url var="jquery" value="/static/jquery/jquery.min.js"/>
-    <script src="${jquery }"></script>
-    
-    <spring:url var="bootstrap.bundle" value="/static/bootstrap/js/bootstrap.bundle.min.js"/>
-    <script src="${bootstrap.bundle }"></script>
+    <c:import url="template/imports.jsp"></c:import>
     
 </head>
 <body class="bg-dark">

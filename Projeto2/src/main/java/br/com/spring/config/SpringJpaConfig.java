@@ -1,7 +1,5 @@
 package br.com.spring.config;
 
-import java.util.Properties;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -21,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class SpringJpaConfig {
 	
 	/*@Autowired
-	private Environment env;
+	private Environment env;*
 
 	@Bean
 	public LocalSessionFactoryBean getSessionFactory() {
@@ -73,15 +71,8 @@ public class SpringJpaConfig {
     public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(dataSource);
-        factory.setPackagesToScan("br.com.spring.domain");
+        factory.setPackagesToScan("br.com.spring.model");
         factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        
-        Properties props = new Properties();
-        props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        props.setProperty("hibernate.show_sql", "true");
-        props.setProperty("hibernate.format_sql", "true");
-        props.setProperty("hibernate.hbm2ddl.auto", "create");
-        factory.setJpaProperties(props);
         
         factory.afterPropertiesSet();
         return factory.getObject();

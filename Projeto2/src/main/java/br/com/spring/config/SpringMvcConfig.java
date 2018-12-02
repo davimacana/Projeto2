@@ -19,7 +19,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/external/");
+		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/");
 	}
 
 	@Bean
