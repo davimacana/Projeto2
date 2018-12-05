@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -17,13 +19,14 @@ public class Produto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String descricao;
 	private Long quantidade;
 	private BigDecimal custoUnitario;
 	private BigDecimal precoVenda;
-	private Date dataCadastro;
+	private Date dataAtualizacao;
 	
 	public Long getId() {
 		return id;
@@ -61,10 +64,10 @@ public class Produto implements Serializable {
 	public void setPrecoVenda(BigDecimal precoVenda) {
 		this.precoVenda = precoVenda;
 	}
-	public Date getDataCadastro() {
-		return dataCadastro;
+	public Date getDataAtualizacao() {
+		return dataAtualizacao;
 	}
-	public void setDataCadastro(Date dataCadastro) {
-		this.dataCadastro = dataCadastro;
+	public void setDataAtualizacao(Date dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
 	}
 }

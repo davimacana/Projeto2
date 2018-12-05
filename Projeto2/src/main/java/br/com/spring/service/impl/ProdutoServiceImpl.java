@@ -22,4 +22,24 @@ public class ProdutoServiceImpl implements ProdutoService {
 	public List<Produto> retornaProdutos() {
 		return produtoDAO.retornaProdutos();
 	}
+
+	@Override
+	public Produto consultarProduto(Long id) {
+		return produtoDAO.consultarProduto(id);
+	}
+
+	@Override
+	public void editar(Produto produto) {
+		produtoDAO.editar(produto);
+	}
+	
+	@Override
+	public void salvar(Produto produto) {
+		produtoDAO.salvar(produto);
+	}
+
+	@Override
+	public void excluir(Long id) {
+		produtoDAO.excluir(id);
+	}
 }
