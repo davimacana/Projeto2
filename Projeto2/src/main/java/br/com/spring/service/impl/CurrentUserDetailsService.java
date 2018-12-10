@@ -20,6 +20,7 @@ public class CurrentUserDetailsService implements UserDetailsService, Applicatio
 	@Autowired
 	private UsuarioService usuarioService;
 
+	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		Usuario user;		
 		try {	
@@ -30,6 +31,7 @@ public class CurrentUserDetailsService implements UserDetailsService, Applicatio
 		return new CurrentUser(user);
 	}
 	
+	@Override
 	public void onApplicationEvent(AuthenticationSuccessEvent event) {
 		String userName = ((UserDetails) event.getAuthentication().getPrincipal()).getUsername();
         Usuario user = usuarioService.findUserByEmail(userName);

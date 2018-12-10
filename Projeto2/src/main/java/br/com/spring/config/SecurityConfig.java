@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .failureUrl("/auth/login?error=true")
                     .usernameParameter("j_username")
                     .passwordParameter("j_password")
+                    .defaultSuccessUrl("/home")
                     .permitAll()
 	            .and()
 		            .logout()
@@ -41,7 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .deleteCookies("JSESSIONID")
 	            .and()
 	            	.exceptionHandling().accessDeniedPage("/auth/denied");
-
 	}
 	
 	@Override
