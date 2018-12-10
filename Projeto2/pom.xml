@@ -48,9 +48,7 @@
 		    <artifactId>spring-security-taglibs</artifactId>
 		    <version>5.0.2.RELEASE</version>
 		</dependency>
-
-		
-		
+				
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
