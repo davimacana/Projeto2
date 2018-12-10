@@ -22,19 +22,24 @@
 	<div class="container" style="width: fit-content;">
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Login</div>
+			<!--<p>usuario: root@email.com</p>
+			<p>senha: root</p> -->
+			
 			<div class="card-body">
-				<spring:url value="/login" var="login" />
-				<form:form modelAttribute="usuario" class="form-signin" method="post" action="${login }">
+				<c:if test="${not empty error}" >
+	                <p><font color="red">${error}</font></p>
+	            </c:if>
+	            <spring:url value="/auth/login" var="login"></spring:url>
+				<form name="f" action="${login }" method="POST">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<div class="form-group">
 						<div class="form-label-group">
-							<form:input path="login" class="form-control" placeholder="Endereço de email"/> 
-							<form:errors path="login" cssClass="label label-danger"/>
+							<input type='email' name='j_username' required autofocus> 
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="form-label-group">
-							<form:input path="senha" type="password" class="form-control" placeholder="Senha"/>
-							<form:errors path="senha" cssClass="label label-danger"/>
+							<input type='password' name='j_password' required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -45,7 +50,7 @@
 						</div>
 					</div>
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-				</form:form>
+				</form>
 				<div class="text-center">
 					<a class="d-block small mt-3" href="register.html">Register an
 						Account</a> <a class="d-block small" href="forgot-password.html">Forgot

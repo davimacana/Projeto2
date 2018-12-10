@@ -39,7 +39,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping("editar")
-	public ModelAndView Editar(@Valid @ModelAttribute("produto") Produto produto, BindingResult result, RedirectAttributes attr) {
+	public ModelAndView editar(@Valid @ModelAttribute("produto") Produto produto, BindingResult result, RedirectAttributes attr) {
 		if (result.hasErrors()) {
 			return new ModelAndView("/produto/editarSalvarProduto");
 		}
@@ -57,7 +57,7 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/cadastrar")
-	public ModelAndView carregarinserir(@ModelAttribute("produto") Produto produto) {
+	public ModelAndView carregarInserir(@ModelAttribute("produto") Produto produto) {
 		return new ModelAndView("/produto/editarSalvarProduto");
 	}
 	
