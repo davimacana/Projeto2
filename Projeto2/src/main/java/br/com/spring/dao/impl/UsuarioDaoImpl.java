@@ -42,4 +42,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	public void salvarUsuario(Usuario usuario) {
 		em.persist(usuario);
 	}
+
+	@Override
+	public Usuario consultarId(Long id) {
+		return em.find(Usuario.class, id);
+	}
 }

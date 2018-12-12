@@ -14,5 +14,6 @@ public interface UsuarioDao {
 	void atualizarUsuario(Usuario usuario);
 	void salvarUsuario(Usuario usuario);
 	List<Usuario> retornaUsuarios();
+	Usuario consultarId(Long id);
 	
 }

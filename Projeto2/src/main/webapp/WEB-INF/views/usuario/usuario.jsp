@@ -33,7 +33,7 @@
 							<a class="btn btn-dark" href="${inserirUsuario }">Inserir Usuario</a>
 					    </div>
 					    <br><br>
-						<div class="${message != null ? 'panel-default' : 'panel-success'}">
+						<div class="${message == null ? 'panel-default' : 'panel-success'}">
 							<div class="table-responsive">
 				            	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				                	<thead>
@@ -42,6 +42,7 @@
 						                    <th>Último login</th>
 						                    <th>Nome</th>
 						                    <th>Perfil</th>
+						                    <th>Ação</th>
 				                  		</tr>
 				                 	</thead>
 				                 	<tfoot>
@@ -50,6 +51,7 @@
 						                    <th>Último login</th>
 						                    <th>Nome</th>
 						                    <th>Perfil</th>
+						                    <th>Ação</th>
 				                    	</tr>
 				                 	</tfoot>
 									<tbody>
@@ -59,6 +61,10 @@
 							                    <td><f:formatDate value="${usuario.ultimoLogin }"/></td>
 							                    <td>${usuario.nomeCompleto	 }</td>
 							                    <td>${usuario.perfil }</td>
+							                    <td>
+							                		<spring:url value="/usuario/editar/${usuario.id }" var="editar"/>
+	                        						<a class="btn btn-info" href="${editar }" >Editar</a>
+	                        					</td>
 				               	   			</tr>
 				                 		</c:forEach>
 				                	</tbody>

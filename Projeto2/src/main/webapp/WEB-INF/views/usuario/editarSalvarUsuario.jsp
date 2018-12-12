@@ -37,6 +37,7 @@
 					    <spring:url value="${usuario.id == null ? '/usuario/inserir' : '/usuario/editar'}" var="salvar"/>
         				<form:form modelAttribute="usuario" action="${salvar }" method="post">
 				        	<form:hidden path="id"/>
+				        	<form:hidden path="endereco.id"/>
 				        	<div class="form-group">
 				                <label for="nome">Email: </label>
 				                <form:input path="email" class="form-control"/>                
@@ -47,13 +48,34 @@
 				            </div>
 				            <div class="form-group">
 				                <label for="password">Senha: </label>  
-				                <form:input path="password" class="form-control"/>   
+				                <form:input path="password" type="password" class="form-control"/>   
 				            </div>          
 				            <div class="form-group">
+				            	<label for="perfil">Perfil: </label><br>
 				                <form:select path="perfil" required="true">
 			                        <form:option value="ADMIN" label="ADMIN" />
 			                        <form:option value="USER" label="USER" />
 			                    </form:select>    
+				            </div>
+				            <div class="form-group">
+				            	<label for="endereco.bairro">Bairro: </label>
+				                <form:input path="endereco.bairro"  class="form-control"/>
+				            </div>
+				            <div class="form-group">
+				            	<label for="endereco.rua">Rua: </label>
+				                <form:input path="endereco.rua"  class="form-control"/>
+				            </div>
+				            <div class="form-group">
+				            	<label for="endereco.numero">Número: </label>
+				                <form:input path="endereco.numero"  class="form-control"/>
+				            </div>
+				            <div class="form-group">
+				            	<label for="endereco.cep">Cep: </label>
+				                <form:input path="endereco.cep"  class="form-control"/>
+				            </div>
+				            <div class="form-group">
+				            	<label for="endereco.uf">Uf: </label>
+				                <form:input path="endereco.uf"  class="form-control"/>
 				            </div>
 				            <div class="form-group">
 				                <button type="submit" class="btn btn-primary">Confirmar</button>
