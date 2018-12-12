@@ -20,7 +20,7 @@ public class Endereco implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@Column(nullable = true)
-	private String Bairro;
+	private String bairro;
 	@Column(nullable = true)
 	private String rua;
 	@Column(nullable = true)
@@ -49,10 +49,10 @@ public class Endereco implements Serializable {
 		this.numero = numero;
 	}
 	public String getBairro() {
-		return Bairro;
+		return bairro;
 	}
 	public void setBairro(String bairro) {
-		Bairro = bairro;
+		bairro = bairro;
 	}
 	public String getCep() {
 		return cep;
