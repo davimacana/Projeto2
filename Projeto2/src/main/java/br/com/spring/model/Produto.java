@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Davi Maçana
@@ -27,6 +29,10 @@ public class Produto implements Serializable {
 	private BigDecimal custoUnitario;
 	private BigDecimal precoVenda;
 	private Date dataAtualizacao;
+	
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private Usuario usuario;
 	
 	public Long getId() {
 		return id;
@@ -69,5 +75,11 @@ public class Produto implements Serializable {
 	}
 	public void setDataAtualizacao(Date dataAtualizacao) {
 		this.dataAtualizacao = dataAtualizacao;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

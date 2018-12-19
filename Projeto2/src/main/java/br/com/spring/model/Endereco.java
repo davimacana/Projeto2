@@ -19,14 +19,19 @@ public class Endereco implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
 	@Column(nullable = true)
 	private String bairro;
+	
 	@Column(nullable = true)
 	private String rua;
+	
 	@Column(nullable = true)
 	private Integer numero;
+	
 	@Column(nullable = true)
 	private String cep;
+	
 	@Column(nullable = true)
 	private String uf;
 	
@@ -52,7 +57,7 @@ public class Endereco implements Serializable {
 		return bairro;
 	}
 	public void setBairro(String bairro) {
-		bairro = bairro;
+		this.bairro = bairro;
 	}
 	public String getCep() {
 		return cep;

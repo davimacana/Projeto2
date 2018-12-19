@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.spring.model.CurrentUser;
 import br.com.spring.model.Produto;
+import br.com.spring.model.Usuario;
 import br.com.spring.service.ProdutoService;
+import br.com.spring.service.UsuarioService;
 
 @Controller
 @RequestMapping("produto")
@@ -25,6 +29,9 @@ public class ProdutoController {
 	
 	@Autowired
 	private ProdutoService produtoService;
+	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	@GetMapping("")
 	public ModelAndView carregaProdutos(ModelMap model) {
@@ -67,8 +74,18 @@ public class ProdutoController {
 			return new ModelAndView("/produto/editarSalvarProduto");
 		}
 		produto.setDataAtualizacao(Calendar.getInstance().getTime());
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		produto.setUsuario(((CurrentUser) principal).getUser());
 		produtoService.salvar(produto);
 		attr.addFlashAttribute("message", "Produto inserido com sucesso.");
 		return new ModelAndView("redirect:/produto");
+	}
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
 	}
 }
