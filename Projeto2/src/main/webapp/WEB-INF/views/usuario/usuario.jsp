@@ -14,6 +14,7 @@
   	<meta name="author" content="">
   	<title>Usuario</title>
 	<c:import url="../template/imports.jsp"></c:import>
+	<script src="/Projeto2/static/external/js/usuario.js"></script>
 </head>
 
 <body id="page-top">
@@ -64,6 +65,7 @@
 							                    <td>
 							                		<spring:url value="/usuario/editar/${usuario.id }" var="editar"/>
 	                        						<a class="btn btn-info" href="${editar }" >Editar</a>
+	                        						<button type="button" class="btn btn-danger" id="desativarUsuario" value="${usuario.id }">Desativar</button>
 	                        					</td>
 				               	   			</tr>
 				                 		</c:forEach>

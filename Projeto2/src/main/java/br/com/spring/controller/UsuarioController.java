@@ -1,5 +1,7 @@
 package br.com.spring.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.spring.model.Produto;
 import br.com.spring.model.Usuario;
 import br.com.spring.service.UsuarioService;
 
@@ -60,6 +64,11 @@ public class UsuarioController {
 		usuarioService.editar(usuario);
 		attr.addFlashAttribute("message", "Usuario alterado com sucesso.");
 		return new ModelAndView("redirect:/usuario");
+	}
+	
+	@GetMapping("desativar/{id}")
+	public @ResponseBody boolean excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
+		return usuarioService.desativarUsuario();
 	}
 
 }

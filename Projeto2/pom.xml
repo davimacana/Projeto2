@@ -7,7 +7,7 @@
   <name>Projeto2</name>
   <description>Curso avançado Java, Projeto 2 (Spring MVC, Hibernate)</description>
   
-  <properties>  
+  	<properties>  
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
 		<failOnMissingWebXml>false</failOnMissingWebXml>  
@@ -86,6 +86,18 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.11</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.9.8</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.8</version>
 		</dependency>
 	</dependencies>
 	

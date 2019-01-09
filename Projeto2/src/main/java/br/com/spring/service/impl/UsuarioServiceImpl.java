@@ -47,5 +47,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public void editar(Usuario usuario) {
 		usuarioDao.atualizarUsuario(usuario);
 	}
+
+	@Override
+	public boolean desativarUsuario() {
+		
+		return false;
+	}
 	
 }
