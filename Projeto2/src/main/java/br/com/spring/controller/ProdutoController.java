@@ -19,7 +19,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.spring.model.CurrentUser;
 import br.com.spring.model.Produto;
-import br.com.spring.model.Usuario;
 import br.com.spring.service.ProdutoService;
 import br.com.spring.service.UsuarioService;
 

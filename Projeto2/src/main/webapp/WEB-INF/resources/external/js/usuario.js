@@ -10,4 +10,18 @@ $(document).ready(function() {
 			  });
 		});
 	});
+	
+	$( "#desativarUsuarioPost" ).click(function() {
+		var url = "usuario/desativarPost/";
+		$.ajax({
+			type: "POST",
+			headers: {"X-CSRF-TOKEN": $("input[name='_csrf']").val()},
+			url: url,
+			/*data: data,*/
+			/*dataType: dataType,*/
+			success : function(result) {
+		        alert("Funcionou !");
+		    }
+		});
+	});
 });

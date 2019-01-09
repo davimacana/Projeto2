@@ -66,7 +66,7 @@ public class SpringJpaConfig {
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/projeto2?useTimezone=true&serverTimezone=UTC&useSSL=false");
         ds.setUsername("root");
-        ds.setPassword("admin");
+        ds.setPassword("root");
         return ds;
     }
 	

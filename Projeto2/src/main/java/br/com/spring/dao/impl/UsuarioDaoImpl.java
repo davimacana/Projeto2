@@ -20,7 +20,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	
 	@Override
 	public List<Usuario> retornaUsuarios() {
-		TypedQuery<Usuario> query = em.createQuery("FROM Usuario u", Usuario.class);
+		TypedQuery<Usuario> query = em.createQuery("FROM Usuario u WHERE u.isAtivo = true", Usuario.class);
 		return query.getResultList();
 	}
 	
@@ -46,5 +46,11 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	@Override
 	public Usuario consultarId(Long id) {
 		return em.find(Usuario.class, id);
+	}
+	
+	@Override
+	@Transactional
+	public void removerUsuario(Usuario usuario) {
+		em.remove(em.contains(usuario) ? usuario : em.merge(usuario));
 	}
 }

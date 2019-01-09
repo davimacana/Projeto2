@@ -1,7 +1,5 @@
 package br.com.spring.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.spring.model.Produto;
 import br.com.spring.model.Usuario;
 import br.com.spring.service.UsuarioService;
 
@@ -68,7 +65,12 @@ public class UsuarioController {
 	
 	@GetMapping("desativar/{id}")
 	public @ResponseBody boolean excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
-		return usuarioService.desativarUsuario();
+		return usuarioService.desativarUsuario(id);
+	}
+	
+	@PostMapping("desativarPost")
+	public @ResponseBody boolean excluirPost() {
+		return true;//usuarioService.desativarUsuario();
 	}
 
 }
