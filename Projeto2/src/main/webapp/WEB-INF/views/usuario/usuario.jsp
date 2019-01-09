@@ -66,6 +66,7 @@
 							                		<spring:url value="/usuario/editar/${usuario.id }" var="editar"/>
 	                        						<a class="btn btn-info" href="${editar }" >Editar</a>
 	                        						<button type="button" class="btn btn-danger" id="desativarUsuario" value="${usuario.id }">Desativar</button>
+	                        						<button type="button" class="btn btn-danger" id="desativarUsuarioPost" value="${usuario.id }">Desativar Post</button>
 	                        					</td>
 				               	   			</tr>
 				                 		</c:forEach>

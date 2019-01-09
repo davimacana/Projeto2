@@ -49,9 +49,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public boolean desativarUsuario() {
-		
-		return false;
+	public boolean desativarUsuario(Long id) {
+		boolean retorno = true; 
+		Usuario usuario = usuarioDao.consultarId(id);
+		if (usuario != null) {
+			usuarioDao.removerUsuario(usuario);
+		} else {
+			retorno = false;
+		}
+		return retorno;
 	}
 	
 }

@@ -16,5 +16,5 @@ public interface UsuarioService {
 	List<Usuario> retornaUsuarios();
 	Usuario consultarId(Long id);
 	void editar(Usuario usuario);
-	boolean desativarUsuario();
+	boolean desativarUsuario(Long id);
 }
